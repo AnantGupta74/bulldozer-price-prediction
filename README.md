@@ -1,68 +1,192 @@
-# 🚜 Bluebook for Bulldozers: Sale Price Prediction
+# 🚜 Bulldozer Price Prediction
+
+An end-to-end machine learning project that predicts the sale price of bulldozers using historical auction data from the Bluebook for Bulldozers Kaggle competition. This project demonstrates the complete machine learning workflow, including data exploration, preprocessing, feature engineering, model training, hyperparameter tuning, and evaluation.
+
+---
 
 ## 📌 Project Overview
-This project applies machine learning to predict the auction sale price of bulldozers based on their usage, equipment type, and configuration. Using the [Kaggle Bluebook for Bulldozers dataset](https://www.kaggle.com/competitions/bluebook-for-bulldozers/overview), this notebook demonstrates a complete end-to-end data science workflow — from raw data to a tuned regression model.
 
-## 🛠️ Technical Stack
-- **Language:** Python
-- **Libraries:** Pandas, NumPy, Scikit-Learn, Matplotlib
-- **Model:** RandomForestRegressor
-- **Evaluation Metric:** RMSLE (Root Mean Squared Log Error)
+Accurately estimating the resale value of heavy equipment is important for buyers, sellers, and auction companies. In this project, a Random Forest Regressor is trained on historical auction data to predict bulldozer sale prices based on machine specifications, usage information, and sale dates.
 
-## 🚀 Project Workflow
-1. **Data Ingestion** — Loading time-series data with initial date parsing.
-2. **Exploratory Data Analysis (EDA)** — Visualizing price distributions and identifying missing values.
-3. **Feature Engineering** — Extracting temporal features (Year, Month, Day of week) from the `saledate` column.
-4. **Preprocessing**
-   - Converting string objects into Pandas Categories.
-   - Handling missing numerical data via median imputation.
-   - Binary encoding of missing status to preserve data context.
-5. **Model Selection & Tuning**
-   - Subset-based training for rapid experimentation.
-   - Hyperparameter optimization using `RandomizedSearchCV`.
-6. **Evaluation** — Validating model performance on time-segmented data.
-7. **Feature Importance** — Analyzing key drivers behind bulldozer pricing.
+This project was built as part of my machine learning learning journey to gain practical experience with regression problems and end-to-end ML pipelines.
 
-## 📊 Key Results
-- **Validation RMSLE:** ~0.245
-- **R² Score:** ~0.88
-- **Top Predictors:** Equipment age (`YearMade`), `ProductSize`, and `saleYear`.
+---
 
-## 📁 Repository Structure
-```
-bulldozer-price-prediction/
-├── README.md
-├── requirements.txt
-├── notebooks/
-│   └── bulldozer_price_prediction.ipynb
-└── data/
-    └── README.md   # instructions for downloading the dataset
-```
+## 🎯 Objectives
+
+* Perform exploratory data analysis (EDA)
+* Clean and preprocess real-world data
+* Engineer useful features from datetime columns
+* Train a machine learning regression model
+* Tune model hyperparameters
+* Evaluate model performance using RMSLE
+* Understand feature importance
+
+---
 
 ## 📂 Dataset
-This project uses the [Bluebook for Bulldozers dataset](https://www.kaggle.com/competitions/bluebook-for-bulldozers/overview) from Kaggle. The raw data is **not included** in this repository due to Kaggle's competition data terms. To reproduce this project:
 
-1. Download the dataset from the [Kaggle competition page](https://www.kaggle.com/competitions/bluebook-for-bulldozers/overview) (requires a free Kaggle account and accepting the competition rules).
-2. Place the CSV files in a local `data/` folder.
-3. Update the file paths in the notebook if needed.
+**Source:** Kaggle - Bluebook for Bulldozers Competition
 
-## ⚙️ How to Run
-```bash
-# Clone the repository
-git clone https://github.com/<your-username>/bulldozer-price-prediction.git
-cd bulldozer-price-prediction
+The dataset is not included in this repository because of Kaggle's licensing policy.
 
-# Create and activate a virtual environment (optional but recommended)
-python -m venv venv
-source venv/bin/activate      # On Windows: venv\Scripts\activate
+Download the dataset from:
 
-# Install dependencies
-pip install -r requirements.txt
+https://www.kaggle.com/competitions/bluebook-for-bulldozers/data
 
-# Launch the notebook
-jupyter notebook notebooks/bulldozer_price_prediction.ipynb
+After downloading, place the extracted files inside the `data/` folder.
+
+---
+
+## 🛠️ Technologies Used
+
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Scikit-learn
+* Jupyter Notebook
+
+---
+
+## 📁 Project Structure
+
+```text
+bulldozer-price-prediction/
+│
+├── data/
+│   ├── README.md
+│   └── (Download Kaggle dataset here)
+│
+├── notebooks/
+│   └── end_to_end_bulldozer_price_prediction.ipynb
+│
+├── requirements.txt
+├── LICENSE
+└── README.md
 ```
 
-## 📦 Dependencies
-See [`requirements.txt`](./requirements.txt). Core libraries: Pandas, NumPy, Matplotlib, Scikit-Learn.
+---
 
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/AnantGupta74/bulldozer-price-prediction.git
+cd bulldozer-price-prediction
+```
+
+### 2. Create a virtual environment (optional but recommended)
+
+**Windows**
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+**macOS / Linux**
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Download the dataset
+
+Download the Bluebook for Bulldozers dataset from Kaggle and place all files inside the `data/` directory.
+
+### 5. Run the notebook
+
+```bash
+jupyter notebook notebooks/end_to_end_bulldozer_price_prediction.ipynb
+```
+
+---
+
+## 🔄 Machine Learning Workflow
+
+1. Load and inspect the dataset
+2. Explore missing values and data distribution
+3. Perform feature engineering
+4. Handle missing values
+5. Convert categorical variables into numerical features
+6. Train a Random Forest Regressor
+7. Tune hyperparameters using RandomizedSearchCV
+8. Evaluate the model using RMSLE
+9. Analyze feature importance
+
+---
+
+## 📈 Model
+
+**Algorithm Used**
+
+* Random Forest Regressor
+
+**Hyperparameter Tuning**
+
+* RandomizedSearchCV
+
+**Evaluation Metric**
+
+* Root Mean Squared Log Error (RMSLE)
+
+---
+
+## 📊 Results
+
+The tuned Random Forest model achieved an RMSLE of approximately **0.245** on the validation set.
+
+---
+
+## 📚 Key Concepts Practiced
+
+* Regression
+* Exploratory Data Analysis (EDA)
+* Feature Engineering
+* Handling Missing Values
+* Encoding Categorical Variables
+* Random Forest Regression
+* Hyperparameter Tuning
+* Model Evaluation
+* Feature Importance
+
+---
+
+## 🔮 Future Improvements
+
+* Compare multiple regression models
+* Build a reusable training pipeline
+* Save and load trained models
+* Create a simple prediction interface using Streamlit or Flask
+* Experiment with gradient boosting models such as XGBoost or LightGBM
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 🙏 Acknowledgements
+
+* Kaggle Bluebook for Bulldozers Competition
+* Daniel Bourke & Andrei Neagoie Machine Learning Bootcamp
+* Scikit-learn Documentation
+
+---
+
+## 👤 Author
+
+**Anant Gupta**
+
+GitHub: https://github.com/AnantGupta74
